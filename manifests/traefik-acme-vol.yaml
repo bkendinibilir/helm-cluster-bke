@@ -1,0 +1,17 @@
+# gcloud compute disks create --size=1GB --zone=europe-west1-b traefik-acme
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: traefik-acme
+    labels:
+        app: traefik
+spec:
+    capacity:
+        storage: 1Gi
+    accessModes:
+        - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Retain
+    gcePersistentDisk: 
+        pdName: "traefik-acme"
+        fsType: "ext4"

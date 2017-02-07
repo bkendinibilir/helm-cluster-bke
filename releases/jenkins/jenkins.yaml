@@ -1,0 +1,21 @@
+chart: local/jenkins
+Master:
+  Name: jenkins-master
+  Image: "docker.io/bkendinibilir/jenkins"
+  ImageTag: "2.32.2"
+  AdminUser: admin
+  Cpu: "200m"
+  Memory: "256Mi"
+  JavaOpts: "-Xms512m -Xmx512m"
+  ServiceType: ClusterIP
+  IngressDomain: jenkins.gce.techstories.de
+
+Agent:
+  Image: "docker.io/bkendinibilir/jenkins-slave-jnlp"
+  ImageTag: "latest"
+  Cpu: "200m"
+  Memory: "256Mi"
+
+Persistence:
+  Enabled: true
+  Size: 8Gi

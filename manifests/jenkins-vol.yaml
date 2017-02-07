@@ -1,0 +1,17 @@
+# gcloud compute disks create --size=8GB --zone=europe-west1-b jenkins-data
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: jenkins
+    labels:
+        app: jenkins
+spec:
+    capacity:
+        storage: 8Gi
+    accessModes:
+        - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Retain
+    gcePersistentDisk: 
+        pdName: "jenkins-data"
+        fsType: "ext4"
