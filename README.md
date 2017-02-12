@@ -1,6 +1,6 @@
-# helm-kube
+# helm-gcloud
 
-Kubernetes Cluster specific Helm configuration.
+Google Cloud Kubernetes Cluster specific Helm configuration.
 
 ## setup
 
